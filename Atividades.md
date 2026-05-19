@@ -1,5 +1,7 @@
 # Atividades Práticas — Métodos em C#
 
+
+/*
 **Curso:** Técnico em Desenvolvimento de Sistemas  
 **Tema da aula:** Métodos em C#  
 **Objetivo:** praticar a criação, chamada, organização e reutilização de métodos em programas de console.
@@ -223,3 +225,5 @@ O código no arquivo Avividade05.cs não faz uso de métodos.
 ## Tarefa
 
 Reorganize o código usando métodos para todos os casos possíveis
+
+*/
