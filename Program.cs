@@ -27,68 +27,67 @@ string concatenado = concatenar();
 Console.WriteLine(concatenado);
 Console.WriteLine("Fim!!");
 */
+/*
+Refatore o arquivo Calc.cs, deixe tudo dentro de função, 
 
-static int LerNumeroTabuada()
-{
-  Console.WriteLine("Digite o número da tabuada: ");
-  int numero = int.Parse(Console.ReadLine()!);
+Sugestão:
+- Crie uma função Menu(){  } , que quando executada chama a função Opção() { }
+na última linha do código chame a função Menu();
 
-  return numero;
-}
+*/
 
-static void ExibirTabuada(int numero)
-{
-  Console.WriteLine();
 
-  int contador = 1;
+double numero1;
+double numero2;
+double resultado = 0;
+string opcao;
+string continuar = "s";
 
-  while (contador <= 10)
-  {
-    Console.WriteLine($"{numero} x {contador} = {numero * contador}");
-    contador++;
-  }
-
-  Console.WriteLine();
-}
-
-static string LerContinuacao()
-{
-  Console.WriteLine("Deseja consultar outra tabuada? s/n: ");
-  string resposta = Console.ReadLine()!;
-
-  return resposta;
-}
-
-static bool DesejaContinuar(string resposta)
-{
-  if (resposta == "s" || resposta == "S")
-  {
-    return true;
-  }
-  else
-  {
-    return false;
-  }
-}
-static void ExecutarTabuada()
+while (continuar == "s" || continuar == "S")
 {
   Console.Clear();
+  Console.WriteLine("=== CALCULADORA ===");
+  Console.WriteLine("+ Soma");
+  Console.WriteLine("- Subtração");
+  Console.WriteLine("* Multiplicação");
+  Console.WriteLine("/ Divisão");
+  Console.Write("Escolha uma opção: ");
+  opcao = Console.ReadLine()!;
 
-  int numero = LerNumeroTabuada();
+  Console.Write("Digite o primeiro número: ");
+  numero1 = double.Parse(Console.ReadLine()!);
 
-  ExibirTabuada(numero);
+  Console.Write("Digite o segundo número: ");
+  numero2 = double.Parse(Console.ReadLine()!);
 
-  string resposta = LerContinuacao();
-
-  if (DesejaContinuar(resposta))
+  if (opcao == "+")
   {
-    ExecutarTabuada();
+    resultado = numero1 + numero2;
+    Console.WriteLine($"Resultado da soma: {resultado}");
+  }
+  else if (opcao == "-")
+  {
+    resultado = numero1 - numero2;
+    Console.WriteLine($"Resultado da subtração: {resultado}");
+  }
+  else if (opcao == "*")
+  {
+    resultado = numero1 * numero2;
+    Console.WriteLine($"Resultado da multiplicação: {resultado}");
+  }
+  else if (opcao == "/")
+  {
+    resultado = numero1 / numero2;
+    Console.WriteLine($"Resultado da divisão: {resultado}");
   }
   else
   {
-    Console.WriteLine();
-    Console.WriteLine("Programa encerrado");
+    Console.WriteLine("Opção inválida.");
   }
+
+  Console.WriteLine();
+  Console.Write("Deseja fazer outro cálculo? (s/n): ");
+  continuar = Console.ReadLine()!;
 }
 
-ExecutarTabuada();
+Console.Write("Fim de programa.");

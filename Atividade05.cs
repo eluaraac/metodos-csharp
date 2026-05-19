@@ -62,6 +62,6 @@ while (continuar == "s" || continuar == "S")
     continuar = Console.ReadLine()!;
 }
 
-Console.Write("Fim de programa!!");
+Console.Write("Fim de programa.");
 
 */
